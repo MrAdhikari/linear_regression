@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv('SalaryData.csv')
 
-
 def loss_function(m, b, points):
     total_error = 0
     for i in range(len(points)):
@@ -13,7 +12,6 @@ def loss_function(m, b, points):
         total_error += (y - (m * x + b)) ** 2
     print()
     print(total_error / float(len(points)))
-
 
 def gradient_descent(m_now, b_now, points, L):
     m_gradient = 0
