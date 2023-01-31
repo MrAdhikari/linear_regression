@@ -52,3 +52,9 @@ loss_function(m,b, data)   #for estimating error value
 plt.scatter(data.YearsExperience, data.Salary, color="black")
 plt.plot(list(range(1, 12)), [(m * x + b) for x in range(1, 12)], color="red")
 plt.show()
+
+
+aa = float(input("Enter your experience in years:"))
+bb =float(m*aa + b)
+print("Your expected salary is ", bb)
+
