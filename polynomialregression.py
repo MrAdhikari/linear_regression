@@ -4,9 +4,9 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 
 X = 4 * np.random.rand(100, 1) - 2
-Y = 4 + 2 * X + 5 * X ** 2 + np.random.randn(100, 1)
+Y = 4 + 2 * X + 5 * X ** 2 + np.random.randn(100, 1)    #degree set garne
 
-poly_features = PolynomialFeatures(degree=2, include_bias=False)
+poly_features = PolynomialFeatures(degree=2, include_bias=False)   #degree set garne
 X_poly = poly_features.fit_transform(X)
 
 reg = LinearRegression()
