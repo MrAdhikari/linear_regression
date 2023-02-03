@@ -11,7 +11,7 @@ def loss_function(m, b, points):
 
         total_error += (y - (m * x + b)) ** 2
     print()
-    print(total_error / float(len(points)))
+    print(total_error / float(len(points)*10000000.0))
 
 def gradient_descent(m_now, b_now, points, L):
     m_gradient = 0
@@ -28,12 +28,15 @@ def gradient_descent(m_now, b_now, points, L):
 
         m = m_now - m_gradient * L
         b = b_now - b_gradient * L
+
         return m, b
 
 m = 0
 b = 0
-L = 0.02071
-epochs = 300
+# L = 0.02071
+L = 0.0625
+epochs = 100000
+
 
 
 for i in range(epochs):
@@ -42,7 +45,7 @@ for i in range(epochs):
     m, b = gradient_descent(m, b, data, L)
 print(m, b)
 
-loss_function(m,b, data)   #for estimating error value
+loss_function(m, b, data)   #for estimating error value
 
 plt.scatter(data.YearsExperience, data.Salary, color="black")
 plt.plot(list(range(1, 12)), [(m * x + b) for x in range(1, 12)], color="red")
